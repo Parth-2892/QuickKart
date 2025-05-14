@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> QuickKart </title>
+    <!-- favicon -->
+    <link rel="icon" href="./img/qk.png" type="image/gif" sizes="16x16">
+    <!-- EXTERNAL LINKS -->
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <style>
+        body
+        {
+            margin: 0;
+        }
+        #containerSlider
+        {
+            margin: auto;
+            width: 90%;
+            text-align: center;
+            padding-top: 100px;
+            box-sizing: border-box;
+        }
+        #containerSlider img
+        {
+            width: 100%;
+            height: 140%;
+            text-align: center;
+            align-content: center;
+        }
+        .slick-prev, .slick-next
+        {
+            /* background-color: #ccc; */
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0; /* Hide text */
+            position: absolute;
+            top: 60%; /* Center vertically */
+            transform: translateY(-50%);
+        }
+        .slick-prev
+        {
+            left: -40px; /* Position to the left */
+        }
+        .slick-next
+        {
+            right: -40px; /* Position to the right */
+        }
+        .slick-prev:before, .slick-next:before
+        {
+            font-size: 27px; /* Show arrows */
+            color: black;
+        }
+        @media(max-width: 732px)
+        {
+            #containerSlider img
+            {
+                height: 12em;
+            }
+        }
+        @media(max-width: 500px)
+        {
+            #containerSlider img
+            {
+                height: 10em;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <section>
+            <div id="containerSlider">
+                <div id="slidingImage"> <img src="img/img1.png" alt="image1"> </div>
+                <div id="slidingImage"> <img src="img/img2.png" alt="image2"> </div>
+                <div id="slidingImage"> <img src="img/img3.png" alt="image3"> </div>
+                <div id="slidingImage"> <img src="img/img4.png" alt="image4"> </div>
+            </div>
+    </section>
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+        $('#containerSlider').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: false, // Disable autoplay
+            prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next">Next</button>'
+            });
+        });
+    </script>
+</html>

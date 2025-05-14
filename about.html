@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> QuickKart </title>
+    <!-- favicon -->
+    <link rel="icon" href="./img/qk.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="css/about.css">
+    
+</head>
+<body>
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+
+        function updateBadge() {
+            let counter = Number(document.cookie.split('counter=')[1]?.split(';')[0] || 0);
+            if (counter === 0) {
+                const cartItems = JSON.parse(localStorage.getItem('orderDetails')) || [];
+                counter = cartItems.length;
+            }
+            document.getElementById("badge").innerHTML = counter;
+        }
+
+        document.addEventListener("DOMContentLoaded", updateBadge);
+    </script>
+
+    <!-- ABOUT US CONTENT -->
+    <div class="about-container">
+        <h1>About Us</h1>
+        <p>Welcome to QuickKart, your number one source for all things fashion. We're dedicated to giving you the very best of clothing and accessories, with a focus on quality, customer service, and uniqueness.</p>
+        <h2>Our Story</h2>
+        <p>Founded in 2025, QuickKart has come a long way from its beginnings. When we first started out, our passion for eco-friendly fashion drove us to do tons of research, so that QuickKart can offer you the world's most advanced fashion products. We now serve customers all over the world and are thrilled that we're able to turn our passion into our own website.</p>
+        <h2>Our Mission</h2>
+        <p>We aim to offer our customers a variety of the latest fashion products. We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget-friendly products. We offer all of this while providing excellent customer service and friendly support.</p>
+        <h2>Our Team</h2>
+        <p>Our team is made up of passionate individuals who love fashion and are dedicated to bringing you the best products and services. We work tirelessly to ensure that our customers are happy and satisfied with their purchases.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.profile-container {
+    width: 80%;
+    margin: auto;
+    padding: 90px 60px;
+    position: relative; /* Add this line */
+}
+
+.profile-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.profile-section {
+    margin-bottom: 15px;
+}
+
+.profile-section label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.profile-section span {
+    font-size: 1.2em;
+}
+
+#logoutButton {
+    padding: 10px 20px;
+    background-color: rgb(3, 122, 122);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    /* font-size: 20px; */
+    position: absolute; /* Add this line */
+    top: 98px; /* Adjust as needed */
+    right: -49px; /* Adjust as needed */
+}
+
+#logoutButton:hover {
+    cursor: pointer;
+    background-color: rgb(3, 94, 94);
+}
+
+#orderHistoryButton, #wishlistButton {
+    padding: 10px 15px;
+    color: white;
+    background-color: rgb(3, 122, 122);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#orderHistoryButton:hover, #wishlistButton:hover {
+    cursor: pointer;
+    background-color: rgb(3, 94, 94);
+}
+
+@media(max-width: 900px) {
+    .profile-container {
+        width: 90%;
+        padding: 70px 30px;
+    }
+
+    .profile-container h2 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    .logout-button {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media(max-width: 600px) {
+    .profile-container {
+        width: 100%;
+        padding: 50px 20px;
+    }
+
+    .profile-container h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    .logout-button {
+        top: 10px;
+        right: 10px;
+    }
+}

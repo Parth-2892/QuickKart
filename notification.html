@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> QuickKart </title>
+  <!-- favicon -->
+  <link rel="icon" href="./img/qk.png" type="image/gif" sizes="16x16">
+  <link rel="stylesheet" href="css/notification.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url)
+        {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+
+        function updateBadge() {
+            let counter = Number(document.cookie.split('counter=')[1]?.split(';')[0] || 0);
+            if (counter === 0) {
+                const cartItems = JSON.parse(localStorage.getItem('orderDetails')) || [];
+                counter = cartItems.length;
+            }
+            document.getElementById("badge").innerHTML = counter;
+        }
+
+        document.addEventListener("DOMContentLoaded", updateBadge);
+    </script>
+
+  <div class="notifications-container">
+
+    <div class="notification">
+      <div class="notification-icon">🔔</div>
+      <div class="notification-text">
+        New sale on Cloths! Check out the deals now.
+        <div class="notification-time">5 mins ago</div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="notification-icon">🛒</div>
+      <div class="notification-text">
+        Your order #12345 has been shipped. Track it now.
+        <div class="notification-time">30 mins ago</div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="notification-icon">💳</div>
+      <div class="notification-text">
+        Payment for your recent order has been confirmed.
+        <div class="notification-time">1 hour ago</div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="notification-icon">📦</div>
+      <div class="notification-text">
+        Your package is out for delivery.
+        <div class="notification-time">3 hours ago</div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="notification-icon">🎉</div>
+      <div class="notification-text">
+        Congratulations! You've earned a coupon for your next purchase.
+        <div class="notification-time">1 day ago</div>
+      </div>
+    </div>
+
+    <div class="notification">
+      <div class="notification-icon">📢</div>
+      <div class="notification-text">
+        Flash sale starts in 1 hour! Don't miss out.
+        <div class="notification-time">2 days ago</div>
+      </div>
+    </div>   
+  </div>
+
+  <!-- FOOTER -->
+  <div id="4"></div>
+  <script>
+      load("footer.html");
+      function load(url)
+      {
+          req = new XMLHttpRequest();
+          req.open("GET", url, false);
+          req.send(null);
+          document.getElementById(4).innerHTML = req.responseText;
+      }
+  </script>
+</body>
+</html>
